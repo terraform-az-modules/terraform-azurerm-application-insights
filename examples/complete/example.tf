@@ -7,8 +7,8 @@ provider "azurerm" {
 ## Resource group in which all resources will be deployed.
 ##-----------------------------------------------------------------------------
 module "resource_group" {
-  source      = "terraform-az-modules/resource-group/azure"
-  version     = "1.0.0"
+  source      = "terraform-az-modules/resource-group/azurerm"
+  version     = "1.0.3"
   name        = "core"
   environment = "dev"
   location    = "centralus"
@@ -16,8 +16,8 @@ module "resource_group" {
 }
 
 module "log-analytics" {
-  source                      = "terraform-az-modules/log-analytics/azure"
-  version                     = "1.0.0"
+  source                      = "terraform-az-modules/log-analytics/azurerm"
+  version                     = "1.0.2"
   name                        = "core"
   environment                 = "dev"
   label_order                 = ["name", "environment", "location"]
