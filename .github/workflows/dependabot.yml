@@ -17,6 +17,6 @@ jobs:
       - name: Use GitHub secret
         run: |
           echo "Secret is available as an environment variable"
-          echo "Length of secret: ${#MY_SECRET}"
+          echo "Length of secret: ${#GITHUB}"
         env:
-          MY_SECRET: ${{ secrets.GITHUB }}
+          GITHUB: ${{ secrets.GITHUB }}
