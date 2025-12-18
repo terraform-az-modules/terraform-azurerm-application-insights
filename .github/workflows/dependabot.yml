@@ -1,22 +1,16 @@
-name: Use GitHub Secret
-
+name: Dependabot 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - feat/dependabot 
 
 jobs:
-  example:
+  sword-pulling:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout repos code
+        uses: actions/checkout@v3
 
-      - name: Use GitHub secret
-        run: |
-          echo "Secret is available as an environment variable"
-          echo "Length of secret: ${#GITHUB}"
+      - name: the excalibur
         env:
-          GITHUB: ${{ secrets.GITHUB }}
+          THE_SECRET: ${{ secrets.THE_SECRET_YOU_WISH_TO_UNCOVER }}
+        run: python scripts/the-secret.py
