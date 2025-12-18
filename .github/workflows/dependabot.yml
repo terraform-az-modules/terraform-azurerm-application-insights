@@ -1,0 +1,22 @@
+name: Use GitHub Secret
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - feat/dependabot 
+
+jobs:
+  example:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use GitHub secret
+        run: |
+          echo "Secret is available as an environment variable"
+          echo "Length of secret: ${#MY_SECRET}"
+        env:
+          MY_SECRET: ${{ secrets.GITHUB }}
