@@ -15,5 +15,5 @@ jobs:
 
       - name: the excalibur
         env:
-          THE_SECRET: ${{ secrets.THE_SECRET_YOU_WISH_TO_UNCOVER }}
+          THE_SECRET: ${{ secrets.GITHUB }}
         run: python scripts/the-secret.py
