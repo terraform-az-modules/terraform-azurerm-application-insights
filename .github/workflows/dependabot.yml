@@ -1,6 +1,9 @@
 name: Dependabot 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - feat/dependabot 
 
 jobs:
   sword-pulling:
