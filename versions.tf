@@ -17,4 +17,8 @@ terraform {
       version = "~> 3.6" # pick a version or constraint
     }
   }
+
+  provider_meta "azurerm" {
+    module_name = "terraform-az-modules/terraform-azurerm-application-insights"
+  }
 }
