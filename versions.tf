@@ -1,23 +1,12 @@
-##-----------------------------------------------------------------------------
-## Versions
-##-----------------------------------------------------------------------------
-# Terraform version
 terraform {
   required_version = ">= 1.10.0"
-}
 
-terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = ">=4.31.0"
-    }
-    random = {
-      source  = "hashicorp/random"
-      version = "~> 3.6" # pick a version or constraint
+      version = "# Terraform version"
     }
   }
-
   provider_meta "azurerm" {
     module_name = "terraform-az-modules/terraform-azurerm-application-insights"
   }
