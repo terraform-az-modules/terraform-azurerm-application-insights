@@ -5,11 +5,10 @@
 | application\_type | (Required) Specifies the type of Application Insights to create. Valid values are ios for iOS, java for Java web, MobileCenter for App Center, Node.JS for Node.js, other for General, phone for Windows Phone, store for Windows Store and web for ASP.NET. Values are case sensitive. Unmatched values are treated as ASP.NET by Azure. Changing this forces a new resource to be created. | `string` | `"web"` | no |
 | custom\_name | Override default naming convention | `string` | `null` | no |
 | daily\_data\_cap\_in\_gb | Specifies the Application Insights component daily data volume cap in GB. | `number` | `30` | no |
-| daily\_data\_cap\_notifications\_disabled | Specifies if a notification email will be sent when the daily data volume cap is met. Defaults to false. | `bool` | `false` | no |
+| daily\_data\_cap\_notifications\_enabled | Specifies if a notification email will be sent when the daily data volume cap is met. Defaults to false. | `bool` | `false` | no |
 | deployment\_mode | Specifies how the infrastructure/resource is deployed | `string` | `"terraform"` | no |
 | description | Purpose or user-defined descriptive text for this WebTest. | `string` | `""` | no |
 | diagnostic\_setting\_enable | Enables or disables creation of diagnostic settings for Application Insights. | `bool` | `true` | no |
-| disable\_ip\_masking | By default the real client IP is masked as 0.0.0.0 in the logs. Use this to disable masking and log the real client IP. Defaults to false. | `bool` | `false` | no |
 | enabled | Set to false to prevent the module from creating any resources. | `bool` | `true` | no |
 | environment | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `"dev"` | no |
 | eventhub\_authorization\_rule\_id | Specifies the ID of an Event Hub Namespace Authorization Rule used to send diagnostics data. | `string` | `null` | no |
@@ -22,10 +21,11 @@
 | header | The XML header template for web test configuration. | `string` | `"<WebTest Name=\"WebTest1\" Id=\"%s\" Enabled=\"True\" CssProjectStructure=\"\" CssIteration=\"\" Timeout=\"0\" WorkItemIds=\"\" xmlns=\"http://microsoft.com/schemas/VisualStudio/TeamTest/2010\" Description=\"%s\" CredentialUserName=\"\" CredentialPassword=\"\" PreAuthenticate=\"True\" Proxy=\"default\" StopOnError=\"False\" RecordedResultFile=\"\" ResultsLocale=\"\"><Items>"` | no |
 | internet\_ingestion\_enabled | (Optional) Should the Application Insights component support ingestion over the public internet? Defaults to false. | `bool` | `false` | no |
 | internet\_query\_enabled | (Optional) Should the Application Insights component support querying over the public internet? Defaults to false. | `bool` | `false` | no |
+| ip\_masking\_enabled | By default the real client IP is masked as 0.0.0.0 in the logs. Use this to disable masking and log the real client IP. Defaults to false. | `bool` | `false` | no |
 | kind | Specifies the type of web test. Examples: 'ping' or 'multistep'. Leave empty for default. | `string` | `"ping"` | no |
 | label\_order | The order of labels used to construct resource names or tags. If not specified, defaults to ['name', 'environment', 'location']. | `list(any)` | <pre>[<br>  "name",<br>  "environment",<br>  "location"<br>]</pre> | no |
 | list\_of\_test\_urls | List of URLs to use in the availability tests. Example: ["https://test1.example.com", "https://test2.example.com/app"] | `list(string)` | <pre>[<br>  "https://www.google.com",<br>  "https://www.github.com"<br>]</pre> | no |
-| local\_authentication\_disabled | (Optional) Disable non-Azure AD based authentication. Defaults to false. | `bool` | `false` | no |
+| local\_authentication\_enabled | (Optional) Disable non-Azure AD based authentication. Defaults to false. | `bool` | `false` | no |
 | location | The location/region where the virtual network is created. Changing this forces a new resource to be created. | `string` | n/a | yes |
 | log\_analytics\_destination\_type | Possible values are AzureDiagnostics and Dedicated. Default is AzureDiagnostics. When set to Dedicated, logs sent to a Log Analytics workspace will go into resource-specific tables instead of the legacy AzureDiagnostics table. | `string` | `"AzureDiagnostics"` | no |
 | log\_analytics\_workspace\_id | The ID of the Log Analytics workspace to send diagnostics data to. | `string` | `null` | no |
