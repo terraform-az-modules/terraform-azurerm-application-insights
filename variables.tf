@@ -114,13 +114,13 @@ variable "daily_data_cap_in_gb" {
   description = "Specifies the Application Insights component daily data volume cap in GB."
 }
 
-variable "daily_data_cap_notifications_disabled" {
+variable "daily_data_cap_notifications_enabled" {
   type        = bool
   default     = false
   description = "Specifies if a notification email will be sent when the daily data volume cap is met. Defaults to false."
 }
 
-variable "disable_ip_masking" {
+variable "ip_masking_enabled" {
   type        = bool
   default     = false
   description = "By default the real client IP is masked as 0.0.0.0 in the logs. Use this to disable masking and log the real client IP. Defaults to false."
@@ -132,7 +132,7 @@ variable "workspace_id" {
   description = "(Optional) Specifies the ID of a Log Analytics workspace resource. Changing this forces a new resource to be created."
 }
 
-variable "local_authentication_disabled" {
+variable "local_authentication_enabled" {
   type        = bool
   default     = false
   description = "(Optional) Disable non-Azure AD based authentication. Defaults to false."
